@@ -1,6 +1,7 @@
 <% layout('/layouts/boilerplate') -%>
 
 <div class="all-orders mt-3 mb-3">
+    <h1 class="orders-head mb-3"><b>Total Orders: </b><%= orderCount %></h1>
     <% for(let i=0; i<orderedProducts.length; i++) { %>
         <div class="card mb-3">
             <div class="row g-0">

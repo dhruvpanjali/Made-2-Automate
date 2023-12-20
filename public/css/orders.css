@@ -6,6 +6,18 @@
     .img-container .logo{
         display: none;
     }
+    .orders-head{
+        font-size: 1.5rem;
+    }
+}
+@media(max-width: 576px){
+    .orders-head{
+        font-size: 1.4rem;
+    }
+}
+.orders-head{
+    text-align: center;
+    color: #146C94;
 }
 .all-orders{
     margin: 0 auto;

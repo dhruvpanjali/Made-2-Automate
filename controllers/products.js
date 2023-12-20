@@ -23,19 +23,11 @@ module.exports.dashboard = async(req, res) => {
         }
     }
     // ordered product details calculate
-    let orderedProducts = [];
-    for (const order of orders) {
-        for (const prd of products) {
-            if (prd.orders.includes(order._id)) {
-                const orderedProduct = {
-                    product: prd,
-                    order: order,
-                };
-                orderedProducts.push(orderedProduct);
-                break;
-            }
-        }
-    }
+    let orderedProducts = orders.flatMap(order => {
+        const productsForOrder = products.filter(prd => prd.orders.includes(order._id));
+        return productsForOrder.map(prd => ({ product: prd, order: order }));
+    });
+    
     res.render("dashboard/index.ejs", {
         products, productCount, orderCount, revenue, newStock, orderedProducts
     });

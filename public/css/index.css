@@ -2,7 +2,7 @@
     .leads-head h3, .orders-head h3{
         font-size: 1rem;
     }
-    .leads-head, .orders-head{
+    .leads-head p, .orders-head p{
         font-size: 0.7rem;
     }
     .action-btn{

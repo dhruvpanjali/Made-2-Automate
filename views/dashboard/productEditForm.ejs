@@ -1,0 +1,103 @@
+<% layout('/layouts/noFooter') -%>
+
+<div class="row formContainer pd-form">
+    <div class="col-8 offset-2 mt-3 user-form-container mb-4">
+        <h1 style="text-align: center;">Edit Details</h1>
+        <form action="/products/edit/message" method="post" class="needs-validation product-form p-3" enctype="multipart/form-data">
+
+            <div class="mb-3">
+                <label for="pd-img" class="form-label"><b>Product Image:</b></label>
+                <input type="file" name="product[image]" class="form-control" id="pd-img" required>
+                <div class="invalid-feedback">
+                    Please upload an image.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="pname" class="form-label"><b>Product Name:</b></label>
+                <input type="text" name="product[name]" id="pname" value="<%= savedProduct.name %>" placeholder="Enter Product Name" class="form-control">
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please give a valid name.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="price" class="form-label"><b>Product Price:</b></label>
+                <input type="number" name="product[price]" id="price" value="<%= savedProduct.price %>" placeholder="Enter Product Price" class="form-control">
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Price should be greater than 100.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="mfname" class="form-label"><b>Manufacturer Name:</b></label>
+                <input type="text" name="product[mfname]" id="mfname" value="<%= savedProduct.mfname %>" placeholder="Enter Manufacturer Name" class="form-control">
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please give a valid name.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="desc" class="form-label"><b>Product Desacription:</b></label>
+                <input type="text" name="product[desc]" id="desc" value="<%= savedProduct.desc %>" placeholder="Enter Product description" class="form-control">
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please give a valid description.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="qty" class="form-label"><b>Product Qty.</b></label>
+                <input type="number" name="product[qty]" id="qty" value="<%= savedProduct.qty %>" placeholder="Enter Product Quantity" class="form-control">
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Qty should be greater than 1.
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="row">
+                    <div class="col">
+                        <label for="stock-category" class="form-label"><b>Stock Category:</b></label>
+                        <select class="form-select" id="stock-category" name="product[stockcategory]">
+                            <option selected><%= savedProduct.stockcategory %></option>
+                            <option value="New Stock">New Stock</option>
+                            <option value="Sold Stock">Sold Stock</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label for="pd-category" class="form-label"><b>Product Category:</b></label>
+                        <select class="form-select" id="pd-category" name="product[pdcategory]">
+                            <option selected><%= savedProduct.pdcategory %></option>
+                            <option value="Controller">Controller</option>
+                            <option value="Relay">Relay</option>
+                            <option value="Sensor">Sensor</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row d-flex justify-start">
+                <div class="col">
+                    <button class="btn btn-success"><b>Save Changes</b></button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="/js/productEditForm.js"></script>
+
+

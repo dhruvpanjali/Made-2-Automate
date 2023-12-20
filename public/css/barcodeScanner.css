@@ -1,0 +1,29 @@
+@media(max-width: 768px){
+    .scanning-window{
+        transform: scale(0.8);
+    }
+}
+@media(max-width: 576px){
+    .scanning-window{
+        transform: scale(0.6);
+    }
+}
+.scanning-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #96efff34;
+    padding: 5rem;
+}
+.scanning-window{
+    border-radius: 1rem;
+}
+.scanning-output{
+    background-color: #146C94;
+    border-radius: 1rem;
+    border: 0.07rem solid rgba(0, 0, 0, 0.123);
+}
+.scanning-output p {
+    color: white;
+}

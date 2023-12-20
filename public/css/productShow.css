@@ -1,0 +1,37 @@
+@media(max-width: 768px){
+    .barcode-details{
+        display: flex;
+        justify-content: center;
+    }
+    .add-btn{
+        display: none;
+    }
+    .pd-description, .pd-description h5 b{
+        font-size: 1rem;
+    }
+}
+.pd-description, .pd-description h5 b{
+    font-size: 1.3rem;
+}
+.pd-description{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.add-msg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btm-btns{
+    background-color: white;
+}
+.button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bar-img-container{
+    display: flex;
+    justify-content: center;
+}

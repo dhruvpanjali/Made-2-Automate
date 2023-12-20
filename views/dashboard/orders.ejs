@@ -1,0 +1,41 @@
+<% layout('/layouts/boilerplate') -%>
+
+<div class="all-orders mt-3 mb-3">
+    <% for(let i=0; i<orderedProducts.length; i++) { %>
+        <div class="card mb-3">
+            <div class="row g-0">
+                <div class="col-md-3 img-container">
+                    <img src="<%= orderedProducts[i].product.image.url %>" class="img-fluid rounded-start pd-img" alt="image">
+                    <img src="/images/Logo.png" class="logo" style="height: 2.5rem;" id="logo">
+                </div>
+                <div class="col-md-9 description-container">
+                    <div class="card-body description pd-description">
+                        <h5 class="card-title"><b><%= orderedProducts[i].product.name %></b></h5>
+                        <div class="ellipsis-wrapper mb-2 mt-2">
+                            <p class="card-text"><%= orderedProducts[i].product.desc %></p>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col">
+                                <p class="card-text"><b style="color: #146C94;">Price: </b><%= orderedProducts[i].product.price.toLocaleString("en-IN") %></p>
+                            </div>
+                            <div class="col">
+                                <p class="card-text"><b style="color: #146C94;">Customer Name: </b><%= orderedProducts[i].order.customername %></p>
+                            </div>
+                            <div class="col">
+                                <p class="card-text"><b style="color: #146C94;">Qty: </b><%= orderedProducts[i].order.qty.toLocaleString("en-IN") %></p>
+                            </div>
+                        </div>
+                        <div class="row row-buttons mt-3">
+                            <div class="col">
+                                <a href="/products/dashboard" class="btn btn-primary"><b>Order Again</b></a>
+                            </div>
+                            <div class="col">
+                                <a href="/orders/<%= orderedProducts[i].order._id %>" class="btn btn-primary"><b>View Details</b></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% } %>
+</div>

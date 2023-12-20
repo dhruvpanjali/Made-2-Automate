@@ -1,0 +1,106 @@
+<% layout('/layouts/noFooter') -%>
+
+<div class="all-orders mt-4 mb-1">
+    <div class="card mb-3 heading-message" style="border-radius: 1rem; background-color: #146b9483; border: none;">
+        <div class="add-msg">
+            <i class="fa-solid fa-store me-3" style="font-size: 2.5rem; color: rgb(255, 255, 255);"></i>
+            <h2 style="color: white;"><b>E-Commerce Listing</b></h2>
+        </div>
+    </div>
+    <div class="card mb-3">
+        <div class="row g-0">
+            <div class="col-md-3 img-container">
+                <img src="<%= product.image.url %>" class="img-fluid rounded-start pd-img" alt="image">
+                <img src="/images/Logo.png" class="logo" style="height: 2.5rem;">
+            </div>
+            <div class="col-md-9 description-container">
+                <div class="card-body pd-description">
+                    <h5 class="card-title"><%= product.name %></h5>
+                    <div class="ellipsis-wrapper mb-2 mt-1">
+                        <p class="card-text mt-2"><%= product.desc %></p>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-3">
+                            <p class="card-text"><b style="color: #146C94;">Manufacturer: </b><%= product.mfname %></p>
+                        </div>
+                        <div class="col-5">
+                            <p class="card-text"><b style="color: #146C94;">Product ID: </b><%= product._id %></p>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-3">
+                            <p class="card-text"><b style="color: #146C94;">Price (per piece): </b><%= product.price.toLocaleString("en-IN") %></p>
+                        </div>
+                        <div class="col-3">
+                            <p class="card-text"><b style="color: #146C94;">Ouantity: </b><%= product.qty.toLocaleString("en-IN") %></p>
+                        </div>
+                        <div class="col-3">
+                            <p class="card-text"><b style="color: #146C94;">Category: </b><%= product.stockcategory %></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card mb-3 platforms" style="border-radius: 1rem;">
+        <div class="row">
+            <div class="col-8 offset-2 d-flex justify-content-center">
+                <h1><b>Platforms</b></h1>
+            </div>
+        </div><hr>
+        <div class="row mt-2 d-flex">
+            <div class="col d-flex justify-content-center">
+                <h3><b>Amazon</b></h3>
+            </div>
+            <div class="col d-flex justify-content-center">
+                <button class="btn action-btn">
+                    <i class="fa-solid fa-cloud-arrow-up me-2"></i>
+                    Upload
+                </button>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col d-flex justify-content-center">
+                <h3><b>Flipkart</b></h3>
+            </div>
+            <div class="col d-flex justify-content-center">
+                <button class="btn action-btn">
+                    <i class="fa-solid fa-cloud-arrow-up me-2"></i>
+                    Upload
+                </button>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col d-flex justify-content-center">
+                <h3><b>Indiamart</b></h3>
+            </div>
+            <div class="col d-flex justify-content-center">
+                <button class="btn action-btn">
+                    <i class="fa-solid fa-cloud-arrow-up me-2"></i>
+                    Upload
+                </button>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col d-flex justify-content-center">
+                <h3><b>Website</b></h3>
+            </div>
+            <div class="col d-flex justify-content-center">
+                <button class="btn action-btn">
+                    <i class="fa-solid fa-cloud-arrow-up me-2"></i>
+                    Upload
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="all-orders btm-btns">
+    <div class="card" style="border: none;">
+        <div class="add-msg">
+            <a href="/products/dashboard">
+                <button type="submit" class="btn btn-success p-2">Continue to Home Page</button>
+            </a>
+        </div>
+    </div>
+</div>

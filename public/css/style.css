@@ -1,0 +1,15 @@
+body{
+    min-height: 100vh;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    display: flex;
+    flex-direction: column;
+}
+.container{
+    flex: 1;
+}
+.ellipsis-wrapper {
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Number of lines to show */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

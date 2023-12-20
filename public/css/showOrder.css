@@ -1,0 +1,16 @@
+.card-details{
+    margin: 0 auto;
+    width: 90%;
+    border: 0.2rem solid rgba(0, 0, 0, 0.096);
+    background-color: #f6f1f150;
+}
+.pd-img-container{
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+.pd-img-container img{
+    padding: 1rem;
+    border: 0.2rem solid rgba(0, 0, 0, 0.158);
+    border-radius: 1rem;
+}

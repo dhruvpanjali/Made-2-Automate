@@ -1,0 +1,101 @@
+<% layout('/layouts/noFooter') -%>
+
+<div class="all-orders mt-3 mb-1">
+    <div class="card mb-3" style="border-radius: 1rem;">
+        <div class="add-msg">
+            <i class="fa-solid fa-circle-check me-3" style="font-size: 2.5rem; color: seagreen;"></i>
+            <h2><b>Succesfully Added Product</b></h2>
+        </div>
+    </div>
+    <div class="card mb-3">
+        <div class="row g-0">
+            <div class="col-md-3 img-container">
+                <img src="<%= newProduct.image.url %>" class="img-fluid rounded-start pd-img" alt="image">
+                <img src="/images/Logo.png" class="logo" style="height: 2.5rem;">
+            </div>
+            <div class="col-md-9 description-container">
+                <div class="card-body pd-description">
+                    <h5 class="card-title"><b><%= newProduct.name %></b></h5>
+                    <div class="ellipsis-wrapper mb-2 mt-1">
+                        <p class="card-text mt-2"><%= newProduct.desc %></p>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col mb-1">
+                            <p class="card-text"><b style="color: #146C94;">Manufacturer: </b><%= newProduct.mfname %></p>
+                        </div>
+                        <div class="col">
+                            <p class="card-text"><b style="color: #146C94;">Product ID: </b><%= newProduct._id %></p>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col">
+                            <p class="card-text"><b style="color: #146C94;">Price (per piece): </b><%= newProduct.price.toLocaleString("en-IN") %></p>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col">
+                                <p class="card-text"><b style="color: #146C94;">Ouantity: </b><%= newProduct.qty.toLocaleString("en-IN") %></p>
+                            </div>
+                            <div class="col">
+                                <p class="card-text"><b style="color: #146C94;">Category: </b><%= newProduct.stockcategory %></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card mb-3" style="border-radius: 1rem;">
+        <div class="row g-0 barcode-details">
+            <div class="col img-container bar-img-container">
+                <img id="barcode_img" style="width: auto; height: 5rem;" src="<%= barcodeImgSrc %>" alt="barcode_img">
+            </div>
+            <div class="col-7 button-container">
+                <button onclick="printBarcode()" class="btn btn-primary me-5"><b>Print</b></button>
+                <a href="<%= barcodeImgSrc %>" class="btn btn-primary" download="barcode_<%= newProduct._id %>.png">
+                    <b>Save</b>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="all-orders mb-4 btm-btns">
+    <div class="card mb-3" style="border: none;">
+        <div class="add-msg d-flex justify-content-between">
+            <form action="/products/edit" method="post">
+                
+                <input type="hidden" name="name" value="<%= newProduct.name %>">
+                <input type="hidden" name="desc" value="<%= newProduct.desc %>">
+                <input type="hidden" name="mfname" value="<%= newProduct.mfname %>">
+                <input type="hidden" name="_id" value="<%= newProduct._id %>">
+                <input type="hidden" name="price" value="<%= newProduct.price %>">
+                <input type="hidden" name="qty" value="<%= newProduct.qty %>">
+                <input type="hidden" name="stockcategory" value="<%= newProduct.stockcategory %>">
+                <input type="hidden" name="pdcategory" value="<%= newProduct.pdcategory %>">
+                <input type="hidden" name="url" value="<%= newProduct.image.url %>">
+                <input type="hidden" name="filename" value="productimage">
+
+                <button type="submit" class="btn btn-primary"><b>Edit Details</b></button>
+            </form>
+
+            <form action="/products/saveProduct" method="post">
+
+                <input type="hidden" name="name" value="<%= newProduct.name %>">
+                <input type="hidden" name="desc" value="<%= newProduct.desc %>">
+                <input type="hidden" name="mfname" value="<%= newProduct.mfname %>">
+                <input type="hidden" name="_id" value="<%= newProduct._id %>">
+                <input type="hidden" name="price" value="<%= newProduct.price %>">
+                <input type="hidden" name="qty" value="<%= newProduct.qty %>">
+                <input type="hidden" name="stockcategory" value="<%= newProduct.stockcategory %>">
+                <input type="hidden" name="pdcategory" value="<%= newProduct.pdcategory %>">
+                <input type="hidden" name="url" value="<%= newProduct.image.url %>">
+                <input type="hidden" name="filename" value="productimage">
+
+                <button type="submit" class="btn btn-success"><b>Save Changes</b></button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="JsBarcode.all.min.js"></script>
+<script src="/js/productShow.js"></script>

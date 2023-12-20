@@ -1,0 +1,20 @@
+<% layout('/layouts/boilerplate') -%>
+
+<div class="card mb-3 card-details mt-4">
+    <div class="row pd-img-container">
+        <img src="<%= orderedProduct.image.url %>" style="width: 20rem;" class="card-img-top pd-img">
+    </div>
+    <div class="card-body ms-3 pd-description">
+      <h5 class="card-title"><b>Product name: </b> <%= orderedProduct.name %></h5>
+      <div class="ellipsis-wrapper mb-2 mt-2">
+        <p class="card-text"><b>Description: </b><%= orderedProduct.desc %></p>
+      </div>
+      <p class="card-text"><b>Price: </b><%= orderedProduct.price %></p>
+      <p class="card-text"><b>Manufaturer Name: </b><%= orderedProduct.mfname %></p>
+      <hr>
+      <h4><b style="color: #146C94;">Ordered By:</b></h3>
+      <h5 class="card-title"><b>Customer name: </b> <%= selectedOrder.customername %></h5>
+      <p class="card-text"><b>Message: </b><%= selectedOrder.message %></p>
+      <p class="card-text"><b>Quantity: </b><%= selectedOrder.qty %></p>
+    </div>
+</div>

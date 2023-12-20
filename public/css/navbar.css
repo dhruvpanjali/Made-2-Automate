@@ -1,0 +1,14 @@
+.nav{
+    overflow: hidden;
+  }
+  .Brand-logo{
+    height: 3.5rem;
+  }
+  .nav-btns a{
+    font-size: 2rem;
+    display: inline-flex;
+    align-items: center;
+  }
+  .nav-btns span{
+    font-size: 2rem;
+  }

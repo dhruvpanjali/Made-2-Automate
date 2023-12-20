@@ -1,0 +1,78 @@
+<% layout('/layouts/boilerplate') -%>
+
+<div class="main mt-4 mb-4 px-3">
+    <div class="row rt-data row-cols-lg-7">
+        <div class="total-orders col data">
+            <h1><%= orderCount.toLocaleString("en-IN") %></h1>
+            <span><b>Total Orders</b></span>
+        </div>
+        <div class="total-stock col data">
+            <h1><%= productCount.toLocaleString("en-IN") %></h1>
+            <span><b>Total Stock</b></span>
+        </div>
+        <div class="sold-stock col data">
+            <h1><%= (productCount - newStock).toLocaleString("en-IN") %></h1>
+            <span><b>Sold Stock</b></span>
+        </div>
+        <div class="new-stock col data">
+            <h1><%= newStock.toLocaleString("en-IN") %></h1>
+            <span><b>New Stock</b></span>
+        </div>
+        <div class="Total Revenue col data">
+            <h1><%= revenue.toLocaleString("en-IN") %></h1>
+            <span><b>Total Revenue</b></span>
+        </div>
+    </div>
+    
+
+    <!-- ------------------------------------------- -->
+    <div class="row orders-section mt-2">
+        <div class="row upper-sec mb-3">
+            <div class="left col-6 orders-head">
+                <h3><b>Total Orders</b></h3>
+                <p>A summary of your Orders</p>
+            </div>
+            <div class="right col-6">
+                <a href="/orders" class="action-btn">View all</a>
+            </div>
+        </div>
+        <% for(let i=0; i<2; i++) { %>
+            <div class="row lower-sec mb-3">
+                <div class="col">
+                    <div class="ellipsis-wrapper mb-2">
+                        <h4><%= orderedProducts[i].product.name %></h4>
+                    </div>
+                    <div class="ellipsis-wrapper mb-2">
+                        <h6><%= orderedProducts[i].product.desc %></h6>
+                    </div>
+                    <p>Quantity: <span><%= orderedProducts[i].order.qty.toLocaleString("en-IN") %></span> Pieces</p>
+                </div>
+            </div>
+        <% } %>
+    </div>
+
+    <div class="row orders-section mt-3 mb-3">
+        <div class="row upper-sec mb-3">
+            <div class="left col-6 leads-head">
+                <h3><b>Total Leads</b></h3>
+                <p>A summary of your Leads Received</p>
+            </div>
+            <div class="right col-6">
+                <a href="/orders" class="action-btn">View all</a>
+            </div>
+        </div>
+        <% for(let i=0; i<1; i++) { %>
+            <div class="row lower-sec mb-3">
+                <div class="col">
+                    <div class="ellipsis-wrapper">
+                        <h4><%= orderedProducts[i].order.customername %></h4>
+                    </div>
+                    <div class="ellipsis-wrapper">
+                        <h6><%= orderedProducts[i].order.message %></h6>
+                    </div>
+                    <p>Quantity: <span><%= orderedProducts[i].order.qty.toLocaleString("en-IN") %></span> Pieces</p>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</div>

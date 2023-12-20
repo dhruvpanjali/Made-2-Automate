@@ -1,0 +1,56 @@
+@media(max-width: 768px){
+    .img-container{
+        display: flex;
+        justify-content: center;
+    }
+    .img-container .logo{
+        display: none;
+    }
+}
+.all-orders{
+    margin: 0 auto;
+    padding: 1rem;
+    width: 85%;
+    background-color: #AFD3E2;
+    border-radius: 1rem;
+}
+.all-orders .card{
+    padding: 1rem !important;
+    border-radius: 1rem;
+}
+.all-orders .row{
+    background-color: white;
+}
+.all-orders .card img{
+    height: 13rem;
+}
+.description-container{
+    display: flex;
+    align-items: center;
+}
+.description{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    line-height: 1.5rem;
+}
+.img-container{
+    padding: 0.5rem;
+    position: relative;
+}
+.img-container .pd-img{
+    padding: 1rem;
+    border: 0.2rem solid rgba(0, 0, 0, 0.199);
+    border-radius: 1rem;
+}
+.img-container .logo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 0.5rem;
+    margin-left: 0.8rem;
+    padding: 0.2rem;
+    border-radius: 50%;
+    opacity: 0.4;
+}

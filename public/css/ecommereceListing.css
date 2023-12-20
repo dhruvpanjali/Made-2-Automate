@@ -13,9 +13,21 @@
         font-size: 1.2rem;
     }
 }
-/* .add-btn{
-    display: none;
-} */
+.action-btn-ecomm{
+    padding: 1.2rem 1.8rem;
+    border-radius: 0.5rem;
+    height: 50%;
+    color: white;
+    background-color: #146C94;
+    display: flex;
+    align-items: center;
+    border: none;
+    transition: all 0.2s 0s linear;
+}
+.action-btn-ecomm:hover{
+    background-color: #125270;
+    transform: scale(1.1);
+}
 .pd-description, .pd-description h5 b{
     font-size: 1.3rem;
 }
